@@ -2,3 +2,4 @@ discord
 discord.ui
 sqlalchemy
 flask
+deep_translator
