@@ -9,6 +9,9 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 import sqlalchemy
 
+from keep_alive import keep_alive
+keep_alive()
+
 engine = create_engine('sqlite:///serverflags.db')
 Base = sqlalchemy.orm.declarative_base()
 session = sessionmaker(bind=engine)
