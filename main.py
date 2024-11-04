@@ -114,13 +114,14 @@ async def on_message(message):
 
   async def checkforautomodlogchannel():
     channel = None
+    name = "┊automod-logging"
 
-    if discord.utils.get(message.guild.channels, name="automod-logs"):
-      channel = discord.utils.get(message.guild.channels, name="automod-logs")
+    if discord.utils.get(message.guild.channels, name=name):
+      channel = discord.utils.get(message.guild.channels, name=name)
 
-    if not discord.utils.get(message.guild.channels, name="automod-logs"):
+    if not discord.utils.get(message.guild.channels, name=name):
 
-      channel = await message.guild.create_text_channel("automod-logs")
+      channel = await message.guild.create_text_channel(name)
 
     await channel.send(f"**{message.author}** has been timed out for using a flagged word: {message.content}")
 
