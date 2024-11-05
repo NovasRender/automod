@@ -173,6 +173,7 @@ async def addflag(ctx, *, message):
   if flagtype == "default":
     for x in range(0, len(baddef):
       add_flagged_word(ctx.guild.id, baddef[x])
+      print(f"added {baddef[x]}!")
   
   add_flagged_word(ctx.guild.id, message)
   
