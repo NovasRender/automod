@@ -163,21 +163,12 @@ async def addflag(ctx, *, message):
     flagtype = "Strict"
   
   if message and "$$$" in message:
-    flagtype = "default
+    flagtype = "default"
 
   word = message.split("$")[1]
   
-  embed = discord.Embed(title="Add Flag", description=f"Successfully added a {flagtype} flag! (flagged $$nigger, $$nigga, $$faggot, $$chink, $$spic, 
-$$kike, $$gook, $$retard, $$tranny, $$cunt, 
-$$whore, $$dyke, $$coon, $$wetback, $$beaner, 
-$$jap, $$paki, $$raghead, $$sandnigger, $$wop, 
-$$gyp, $$mick, $$kraut, $$hebe, $$sambo, $$chug, 
-$$cholo, $$redskin, $$chinaman, $$guido, $$golliwog,
-$$ni66er, $$n1gger, $$n!gger, $$nigg3r, $$nigg@r, 
-$$f@ggot, $$ch1nk, $$sp1c, $$k1ke, $$g00k, $$g0ok, 
-$$r3tard, $$tr@ nny, $$wh0re, $$b1tch, $$d!ke, $$c00n, 
-$$wetb@ck, $$j@p, $$p@ki, $$w0p, $$m1ck, $$kr@ut, 
-$$h3be, $$chinam@n, $$guid0, $$g0lliwog : db {message})!", color=0x00ff00)
+  
+  embed = discord.Embed(title="Add Flag", description=f"Successfully added a {flagtype} flag! (flagged {word} : db {message})!", color=0x00ff00)
 
   if flagtype == "default":
     for x in range(0,len(baddef):
