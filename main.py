@@ -9,17 +9,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 import sqlalchemy
 
-baddef = "$$nigger, $$nigga, $$faggot, $$chink, $$spic, 
-$$kike, $$gook, $$retard, $$tranny, $$cunt, 
-$$whore, $$dyke, $$coon, $$wetback, $$beaner, 
-$$jap, $$paki, $$raghead, $$sandnigger, $$wop, 
-$$gyp, $$mick, $$kraut, $$hebe, $$sambo, $$chug, 
-$$cholo, $$redskin, $$chinaman, $$guido, $$golliwog,
-$$ni66er, $$n1gger, $$n!gger, $$nigg3r, $$nigg@r, 
-$$f@ggot, $$ch1nk, $$sp1c, $$k1ke, $$g00k, $$g0ok, 
-$$r3tard, $$tr@ nny, $$wh0re, $$b1tch, $$d!ke, $$c00n, 
-$$wetb@ck, $$j@p, $$p@ki, $$w0p, $$m1ck, $$kr@ut, 
-$$h3be, $$chinam@n, $$guid0, $$g0lliwog"
+baddef = "$$nigger, $$nigga, $$faggot, $$chink, $$spic, $$kike, $$gook, $$retard, $$tranny, $$cunt, $$whore, $$dyke, $$coon, $$wetback, $$beaner, $&jap, $$paki, $$raghead, $$sandnigger, $$wop, $$gyp, $$mick, $$kraut, $$hebe, $$sambo, $$chug, $$cholo, $$redskin, $$chinaman, $$guido, $$golliwog, $$ni66er, $$n1gger, $$n!gger, $$nigg3r, $$nigg@r, $$f@ggot, $$ch1nk, $$sp1c, $$k1ke, $$g00k, $$g0ok, $$r3tard, $$tr@ nny, $$wh0re, $$b1tch, $$d!ke, $$c00n, $$wetb@ck, $$j@p, $$p@ki, $$w0p, $$m1ck, $$kr@ut, $$h3be, $$chinam@n, $$guid0, $$g0lliwog"
 
 baddef = baddef.split(", ")
 
