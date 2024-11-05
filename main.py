@@ -162,7 +162,7 @@ async def addflag(ctx, *, message):
   if message and "$$" in message:
     flagtype = "Strict"
   
-  if message and "$$$" in message:
+  if message and "$default" in message:
     flagtype = "default"
 
   word = message.split("$")[1]
@@ -172,7 +172,8 @@ async def addflag(ctx, *, message):
 
   if flagtype == "default":
     for x in range(0, len(baddef):
-      add_flagged_word(ctx.guild.id, baddef[x])
+      z = baddef[int(x)
+      add_flagged_word(ctx.guild.id,baddef[int(z)])
       print(f"added {baddef[x]}!")
   
   add_flagged_word(ctx.guild.id, message)
