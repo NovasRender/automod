@@ -169,7 +169,7 @@ async def addflag(ctx, *, message):
   
   
   embed = discord.Embed(title="Add Flag", description=f"Successfully added a {flagtype} flag! (flagged {word} : db {message})!", color=0x00ff00)
-  print(format(len(baddef))
+  
   if flagtype = "default":
     for x in range(0, len(baddef):
       z = baddef[int(x)]
