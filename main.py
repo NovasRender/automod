@@ -169,12 +169,12 @@ async def addflag(ctx, *, message):
   
   
   embed = discord.Embed(title="Add Flag", description=f"Successfully added a {flagtype} flag! (flagged {word} : db {message})!", color=0x00ff00)
-  
+  e = baddef.split(", ")
   if flagtype == "default":
-    for x in range(0, len(baddef):
-      z = baddef[int(x)]
-      add_flagged_word(ctx.guild.id,baddef[int(z)])
-      print(f"added {baddef[x]}!")
+    for x in range(0, len(e):
+      z = e[int(x)]
+      add_flagged_word(ctx.guild.id,e[int(z)])
+      print(f"added {e[x]}!")
   
   add_flagged_word(ctx.guild.id, message)
   
