@@ -28,8 +28,8 @@ def add_flagged_word(server_id, word):
 
     if not line:
        
-        with open('saves.txt', 'r') as wfile:
-           with open('saves.txt', 'w') as rfile:
+        with open('saves.txt', 'w') as wfile:
+           with open('saves.txt', 'r') as rfile:
               wfile.write(f"{rfile}\n{server_id}|{word}")
     else:
        
