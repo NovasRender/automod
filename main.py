@@ -4,10 +4,6 @@ import discord.ui
 import os
 from discord.ext import commands
 import time
-from sqlalchemy import create_engine, Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
-import sqlalchemy
 
 baddef = "$$nigger, $$nigga, $$faggot, $$chink, $$spic, $$kike, $$gook, $$retard, $$tranny, $$cunt, $$whore, $$dyke, $$coon, $$wetback, $$beaner, $&jap, $$paki, $$raghead, $$sandnigger, $$wop, $$gyp, $$mick, $$kraut, $$hebe, $$sambo, $$chug, $$cholo, $$redskin, $$chinaman, $$guido, $$golliwog, $$ni66er, $$n1gger, $$n!gger, $$nigg3r, $$nigg@r, $$f@ggot, $$ch1nk, $$sp1c, $$k1ke, $$g00k, $$g0ok, $$r3tard, $$tr@ nny, $$wh0re, $$b1tch, $$d!ke, $$c00n, $$wetb@ck, $$j@p, $$p@ki, $$w0p, $$m1ck, $$kr@ut, $$h3be, $$chinam@n, $$guid0, $$g0lliwog"
 
@@ -16,37 +12,72 @@ baddef = baddef.split(", ")
 from keep_alive import keep_alive
 keep_alive()
 
-engine = create_engine('sqlite:///serverflags.db')
-Base = sqlalchemy.orm.declarative_base()
-session = sessionmaker(bind=engine)
-session = session()
+filecontent = nil
 
+with open('saves.txt', 'r') as file:
+    filecontent = file.read()
 
-class FlaggedWord(Base):
-  
-  __tablename__ = 'flagged_words'
-  id = Column(Integer, primary_key=True, autoincrement=True)
-  server_id = Column(String, nullable=False)
-  word = Column(String, nullable=False)
-
-Base.metadata.create_all(engine)
 
 
 def add_flagged_word(server_id, word):
-    flagged_word = FlaggedWord(server_id=server_id, word=word)
-    session.add(flagged_word)
-    session.commit()
+    
+    line = nil
+    
+    with open('saves.txt', 'r') as file:
+        line = [line.strip() for line in file if server_id in line]
+
+    if not line:
+       
+        with open('saves.txt', 'r') as wfile:
+           with open('saves.txt', 'w') as rfile:
+              wfile.write(f"{rfile}\n{server_id}|{word}")
+    else:
+       
+        with open('saves.txt', 'r') as file:
+            lines = file.readlines()
+
+        for i, line in enumerate(lines):
+            if server_id in line:
+                lines[i] = f"{line.strip()},{word}"
+                break
+
+        with open('savese.txt', 'w') as file:
+            file.writelines(lines)
+
+
 
 def get_flagged_words(server_id):
-    return session.query(FlaggedWord).filter_by(server_id=server_id).all()
+    with open('saves.txt', 'r') as file:
+        for line in file:
+            if server_id in line:
+                after_pipe = line.split('|', 1)[1].strip()
+                print(after_pipe)
+                break
   
+
+
 def remove_flagged_word(server_id, word):
-    flagged_word = session.query(FlaggedWord).filter_by(server_id=server_id, word=word).first()
-    if flagged_word:
-        session.delete(flagged_word)
-        session.commit()
 
+    nl = NotImplemented
+    
+    with open('saves.txt', 'r') as file:
+        line = [line.strip() for line in file if server_id in line]
 
+    parts = line.split('|')
+    if len(parts) > 1:
+        items = [item for item in parts[1].split(',') if item != word]
+        nl = parts[0] + "|" + ",".join(items)
+        
+        with open('saves.txt', 'r') as file:
+            lines = file.readlines()
+
+        for i, line in enumerate(lines):
+            if server_id in line:
+                lines[i] = nl
+                break
+
+        with open('savese.txt', 'w') as file:
+            file.writelines(lines)
 
 from deep_translator import GoogleTranslator
 
