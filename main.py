@@ -12,7 +12,7 @@ baddef = baddef.split(", ")
 from keep_alive import keep_alive
 keep_alive()
 
-filecontent = nil
+filecontent = NotImplemented
 
 with open('saves.txt', 'r') as file:
     filecontent = file.read()
