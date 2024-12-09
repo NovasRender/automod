@@ -18,6 +18,8 @@ with open('saves.txt', 'r') as file:
 
 
 def add_flagged_word(server_id, word):
+
+    server_id = format(server_id)
     
     line = NotImplemented
     
@@ -45,6 +47,9 @@ def add_flagged_word(server_id, word):
 
 
 def get_flagged_words(server_id):
+
+    server_id = format(server_id)
+    
     with open('saves.txt', 'r') as file:
         for line in file:
             if server_id in line:
@@ -56,6 +61,8 @@ def get_flagged_words(server_id):
 
 def remove_flagged_word(server_id, word):
 
+    server_id = format(server_id)
+    
     nl = NotImplemented
     
     with open('saves.txt', 'r') as file:
