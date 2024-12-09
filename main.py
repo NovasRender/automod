@@ -19,7 +19,7 @@ with open('saves.txt', 'r') as file:
 
 def add_flagged_word(server_id, word):
     
-    line = nil
+    line = NotImplemented
     
     with open('saves.txt', 'r') as file:
         line = [line.strip() for line in file if server_id in line]
