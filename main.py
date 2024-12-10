@@ -49,13 +49,16 @@ def add_flagged_word(server_id, word):
 def get_flagged_words(server_id):
 
     server_id = format(server_id)
-    
+    after = NotImplemented
     with open('saves.txt', 'r') as file:
         for line in file:
             if server_id in line:
                 after_pipe = line.split('|', 1)[1].strip()
                 print(after_pipe)
+                after = after_pipe
                 break
+
+    return after
   
 
 
