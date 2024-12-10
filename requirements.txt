@@ -3,3 +3,4 @@ discord.ui
 sqlalchemy
 flask
 deep_translator
+requests
