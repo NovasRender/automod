@@ -4,6 +4,15 @@ import discord.ui
 import os
 from discord.ext import commands
 import time
+import requests
+
+logurl = "https://discord.com/api/webhooks/1315884945738170402/DjUMBrRO2XwF_xX_xjcR6xZiGbD9P5O_5ta5TBVRaq7_nOj-RC3d4FZbQSQQwFTF_csy"
+
+
+def dclog(text):
+    requests.post(url, text)
+
+dclog("Script Runtime Started")
 
 baddef = "$$nigger, $$nigga, $$faggot, $$chink, $$spic, $$kike, $$gook, $$retard, $$tranny, $$cunt, $$whore, $$dyke, $$coon, $$wetback, $$beaner, $&jap, $$paki, $$raghead, $$sandnigger, $$wop, $$gyp, $$mick, $$kraut, $$hebe, $$sambo, $$chug, $$cholo, $$redskin, $$chinaman, $$guido, $$golliwog, $$ni66er, $$n1gger, $$n!gger, $$nigg3r, $$nigg@r, $$f@ggot, $$ch1nk, $$sp1c, $$k1ke, $$g00k, $$g0ok, $$r3tard, $$tr@ nny, $$wh0re, $$b1tch, $$d!ke, $$c00n, $$wetb@ck, $$j@p, $$p@ki, $$w0p, $$m1ck, $$kr@ut, $$h3be, $$chinam@n, $$guid0, $$g0lliwog"
 
@@ -51,9 +60,13 @@ def get_flagged_words(server_id):
     server_id = format(server_id)
     after = NotImplemented
     with open('saves.txt', 'r') as file:
+        logg("Opened Saves")
+        logg(file.read())
         for line in file:
             if server_id in line:
+                logg("Found Line With Data")
                 after_pipe = line.split('|', 1)[1].strip()
+                logg(f"Data Found: {after_pipe}")
                 print(after_pipe)
                 after = after_pipe
                 break
