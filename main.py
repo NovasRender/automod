@@ -10,7 +10,7 @@ logurl = "https://discord.com/api/webhooks/1315884945738170402/DjUMBrRO2XwF_xX_x
 
 
 def dclog(text):
-    requests.post(url, text)
+    requests.post(logurl, text)
 
 dclog("Script Runtime Started")
 
