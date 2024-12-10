@@ -9,7 +9,7 @@ import requests
 logurl = "https://discord.com/api/webhooks/1315884945738170402/DjUMBrRO2XwF_xX_xjcR6xZiGbD9P5O_5ta5TBVRaq7_nOj-RC3d4FZbQSQQwFTF_csy"
 
 
-def dclog(text):
+def logg(text):
 
     data = {
         "content" : text,
